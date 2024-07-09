@@ -36,7 +36,16 @@ function buildMap(lat,lon)  {
     map.addLayer(validatorsLayer);
 } 
  
- 
+
+function addMarker(latitude, longitude, title, icon) {
+    var marker = L.marker([latitude, longitude], { title: title, icon: icon }).addTo(map);
+    return marker;
+  }
+
+
+
+
+        
  
  
  
@@ -90,7 +99,6 @@ function buildMap(lat,lon)  {
   <script>
 
       ThunkableWebviewerExtension.receiveMessage(function(message) {
-                      alert("5555555555555");
 
       if (isValidJSONWithName(message)) {
               alert("hhhhhh");
@@ -100,8 +108,15 @@ function buildMap(lat,lon)  {
           const long   =  data.long;
       alert(long);
 
-
+  var markerIcon = L.icon({
+    iconUrl: data.icon;,
+    shadowUrl: data.shadow;,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    shadowSize: [41, 41]
+  });
 buildMap(lat,long);
+  addMarker(lat, lon, 'My Location', markerIcon);
 
  
 
