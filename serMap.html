@@ -81,6 +81,8 @@
 
       ThunkableWebviewerExtension.receiveMessage(function(message) {
       if (isValidJSONWithName(message)) {
+              alert("hhhhhh");
+
         const data = JSON.parse(message);
           const lat   =  data.lat;
           const long   =  data.long;
