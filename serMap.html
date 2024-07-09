@@ -82,8 +82,9 @@
       ThunkableWebviewerExtension.receiveMessage(function(message) {
       if (isValidJSONWithName(message)) {
         const data = JSON.parse(message);
-          const lat   =   "lat" in data;
-          const long   =   "long" in data;
+          const lat   =  data.lat;
+          const long   =  data.long;
+      
 // Initialize the map
     const map = L.map('map').setView([lat, long], 15); // users coordinates and zoom level
 
