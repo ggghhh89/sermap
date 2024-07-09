@@ -16,12 +16,10 @@
  <script>
    function isValidJSONWithName(jsonString) {
       try {
-         alert("ddddd");
         const jsonData = JSON.parse(jsonString);
      
         return "lat" in jsonData;
       } catch (error) {
-      alert("ffff");
         return false;
       }
     }
@@ -82,19 +80,12 @@
   <script>
 
       ThunkableWebviewerExtension.receiveMessage(function(message) {
-        alert("kkkkkkk");
       if (isValidJSONWithName(message)) {
-
-
-
- 
-alert("ggggggg");
-//
-}
- 
-});
-    // Initialize the map
-    const map = L.map('map').setView([24.45755410405825, 39.62063454026719], 15); // users coordinates and zoom level
+        const data = JSON.parse(message);
+          const lat   =   "lat" in data;
+          const long   =   "long" in data;
+// Initialize the map
+    const map = L.map('map').setView([lat, long], 15); // users coordinates and zoom level
 
     // Add the OpenStreetMap tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -117,6 +108,15 @@ alert("ggggggg");
         alert('You clicked the marker!');
       });
     });
+
+
+
+ 
+
+}
+ 
+});
+    
   </script>
 </body>
 </html>
