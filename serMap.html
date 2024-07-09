@@ -35,7 +35,8 @@ function buildMap(lat,lon)  {
     var validatorsLayer = new OsmJs.Weather.LeafletLayer({lang: 'en'});
     map.addLayer(validatorsLayer);
 } 
- 
+ buildMap(22,22);
+
 
 function addMarker(latitude, longitude, title, icon) {
     var marker = L.marker([latitude, longitude], { title: title, icon: icon }).addTo(map);
