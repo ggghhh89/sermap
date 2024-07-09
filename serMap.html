@@ -106,11 +106,13 @@ function addMarker(latitude, longitude, title, icon) {
         const data = JSON.parse(message);
           const lat   =  data.lat;
           const long   =  data.long;
+         const icon   =  data.icon;
+         const shadow   =  data.shadow;
       alert(long);
 
   var markerIcon = L.icon({
-    iconUrl: data.icon;,
-    shadowUrl: data.shadow;,
+    iconUrl: icon,
+    shadowUrl: shadow,
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     shadowSize: [41, 41]
