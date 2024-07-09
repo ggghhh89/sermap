@@ -101,19 +101,26 @@ function addMarker(latitude, longitude, title, icon) {
       ThunkableWebviewerExtension.receiveMessage(function(message) {
 
       if (isValidJSONWithName(message)) {
-              alert("hhhhhh");
+         
 
         const data = JSON.parse(message);
           const lat   =  data.lat;
           const long   =  data.long;
-         const icon   =  data.icon;
-         const shadow   =  data.shadow;
-      alert(long);
-      alert(icon);
+         //const icon   =  data.icon;
+        // const shadow   =  data.shadow;
+  var markerIcon = L.icon({
+    iconUrl: 'https://www.clipartmax.com/png/middle/123-1231948_map-marker-with-shadow.png',
+    shadowUrl: 'https://www.clipartmax.com/png/middle/123-1231948_map-marker-with-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    shadowSize: [41, 41]
+  });
+
+
 
 
 buildMap(lat,long);
-//  addMarker(lat, long, 'My Location', markerIcon);
+  addMarker(lat, long, 'My Location', markerIcon);
 
  
 
