@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<div id="weathermap"></div>
+<div id="map"></div>
   
   
  <!--thunkable webviewer extention***********************************************************-->  
@@ -24,16 +24,16 @@
     }
  
 function buildMap(lat,lon)  {
-    document.getElementById('weathermap').innerHTML = "<div id='map' style='width: 100%; height: 100%;'></div>";
-    var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                    osmAttribution = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,' +
-                        ' <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-    osmLayer = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttribution});
-    var map = new L.Map('map');
-    map.setView(new L.LatLng(lat,lon), 9 );
-    map.addLayer(osmLayer);
-    var validatorsLayer = new OsmJs.Weather.LeafletLayer({lang: 'en'});
-    map.addLayer(validatorsLayer);
+var map = L.map('map').setView([51.505, -0.09], 13);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([51.5, -0.09]).addTo(map)
+    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+    .openPopup();
+
 }
 
  buildMap(39.62107332444547,24.456980683522353);
