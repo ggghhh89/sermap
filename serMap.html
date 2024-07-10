@@ -38,9 +38,10 @@ function buildMap(lat,lon)  {
 
 
 
-function addMarker(latitude, longitude, title, icon) {
-    var marker = L.marker([latitude, longitude], { title: title, icon: icon }).addTo(map);
-    return marker;
+function addMarker(latitude, longitude) {
+  L.marker([latitude, longitude]).addTo(map)
+    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+    .openPopup();
   }
 
 
@@ -122,7 +123,7 @@ function addMarker(latitude, longitude, title, icon) {
 
 buildMap(lat,long);
 
- 
+ addMarker(lat, long, );
 
 }
  
