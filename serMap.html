@@ -29,7 +29,7 @@ function buildMap(lat,lon)  {
                         ' <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
     osmLayer = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttribution});
     var map = new L.Map('map');
-    map.setView(new L.LatLng(lat,lon), 9 );
+    map.setView(new L.LatLng(lat,lon), 18 );
     map.addLayer(osmLayer);
     var validatorsLayer = new OsmJs.Weather.LeafletLayer({lang: 'en'});
     map.addLayer(validatorsLayer);
