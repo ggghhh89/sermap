@@ -30,7 +30,7 @@ function buildMap(lat,lon)  {
                         ' <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
       
     osmLayer = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttribution});
-
+alert("UUU");
     var map = new L.Map('map');
     map.setView(new L.LatLng(lat,lon), 13 );
     map.addLayer(osmLayer);
