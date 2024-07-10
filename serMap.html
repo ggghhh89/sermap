@@ -41,7 +41,8 @@ document.body.appendChild(mapDiv);
     var validatorsLayer = new OsmJs.Weather.LeafletLayer({lang: 'en'});
     map.addLayer(validatorsLayer);
 } 
- 
+ buildMap(30.543234,31.754326,500px);
+
 
 function addMarker(latitude, longitude, title, icon) {
     var marker = L.marker([latitude, longitude], { title: title, icon: icon }).addTo(map);
