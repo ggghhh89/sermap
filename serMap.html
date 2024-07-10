@@ -32,7 +32,7 @@ function buildMap(lat,lon)  {
     osmLayer = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttribution});
 
     var map = new L.Map('map');
-    map.setView(new L.LatLng(lat,lon), 17 );
+    map.setView(new L.LatLng(lat,lon), 9 );
     map.addLayer(osmLayer);
     var validatorsLayer = new OsmJs.Weather.LeafletLayer({lang: 'en'});
     map.addLayer(validatorsLayer);
