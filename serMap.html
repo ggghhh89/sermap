@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<div id="Smap"></div>
+  <div id="Smap" style="height: 1000px; width: 100%;"></div>
   <script>
    function isValidJSONWithName(jsonString) {
       try {
@@ -20,7 +20,7 @@
       }
     }
  
-function buildMap(lat,lon,)  {
+function buildMap(lat,lon)  {
 
 
   
@@ -35,7 +35,7 @@ function buildMap(lat,lon,)  {
     var validatorsLayer = new OsmJs.Weather.LeafletLayer({lang: 'en'});
     map.addLayer(validatorsLayer);
 } 
- buildMap(30.543234,31.754326,);
+
 
 
 function addMarker(latitude, longitude, title, icon) {
@@ -108,7 +108,7 @@ function addMarker(latitude, longitude, title, icon) {
         const data = JSON.parse(message);
           const lat   =  data.lat;
           const long   =  data.long;
-                 const height   =  data.height;
+          const height   =  data.height;
 
   var markerIcon = L.icon({
     iconUrl: 'https://www.clipartmax.com/png/middle/123-1231948_map-marker-with-shadow.png',
@@ -121,7 +121,8 @@ function addMarker(latitude, longitude, title, icon) {
 
 
 
-buildMap(lat,long,height);
+buildMap(lat,long);
+addMarker(lat, long, 'My Location', markerIcon);
 
  
 
