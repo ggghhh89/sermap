@@ -20,7 +20,7 @@
       }
     }
  
-function buildMap(lat,lon,height)  {
+function buildMap(lat,lon,)  {
 var mapDiv = document.createElement("div");
 mapDiv.id = "Smap";
 mapDiv.style.height = "500px";
@@ -41,7 +41,7 @@ document.body.appendChild(mapDiv);
     var validatorsLayer = new OsmJs.Weather.LeafletLayer({lang: 'en'});
     map.addLayer(validatorsLayer);
 } 
- buildMap(30.543234,31.754326,"500px");
+ buildMap(30.543234,31.754326,);
 
 
 function addMarker(latitude, longitude, title, icon) {
